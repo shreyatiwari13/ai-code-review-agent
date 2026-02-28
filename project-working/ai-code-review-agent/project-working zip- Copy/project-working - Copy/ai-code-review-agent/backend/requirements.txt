@@ -1,0 +1,7 @@
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+python-dotenv==1.0.0
+requests==2.31.0
+pydantic==1.10.12
+# If Groq publishes an official SDK, add it here. The code falls back to HTTP if not configured.
+# groq==<version>
