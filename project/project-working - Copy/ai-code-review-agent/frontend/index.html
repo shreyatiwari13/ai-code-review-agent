@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Code Review & Rewrite Agent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css">
+</head>
+<body>
+
+  <div id="stubBanner" class="hidden mb-4 p-3 rounded bg-yellow-600 text-gray-900"></div>
+  <div class="container">
+    <h1>🤖 AI Code Review & Rewrite Agent</h1>
+    <p class="subtitle">Powered by intelligent analysis</p>
+
+    <div class="card">
+      <div class="top-bar">
+        <h2>Code Input</h2>
+        <select id="language">
+          <option>JavaScript</option>
+          <option>Python</option>
+          <option>Java</option>
+          <option>C++</option>
+        </select>
+      </div>
+
+      <textarea id="codeInput" placeholder="Paste your code here..."></textarea>
+
+      <div class="button-group">
+        <button id="reviewBtn" class="review-btn">▶ Review Code</button>
+        <button id="rewriteBtn" class="rewrite-btn">⟳ Rewrite Code</button>
+      </div>
+    </div>
+
+    <div id="output" class="output-box">
+      <!-- scores, issues, rewritten code inserted by script -->
+      <div id="scores" class="bg-gray-800 p-4 rounded mb-4">
+        <h2 class="text-xl font-semibold mb-2">Overall Score</h2>
+        <div class="text-4xl font-bold" id="overallScore">--</div>
+        <div class="mt-3">
+          <div id="breakdown" class="space-y-2 text-sm opacity-90"></div>
+        </div>
+        <div class="mt-4">
+          <label class="block mb-2">Improvement</label>
+          <div class="w-full bg-gray-700 rounded h-4">
+            <div id="improveBar" class="h-4 bg-green-400 rounded" style="width:0%"></div>
+          </div>
+          <div class="mt-2 text-sm" id="improveText">--</div>
+        </div>
+      </div>
+      <div id="analysis" class="bg-gray-800 p-4 rounded mb-4"></div>
+      <div id="rewrittenSection" class="bg-gray-800 p-4 rounded">
+        <h3 class="font-semibold mb-2">Rewritten Code</h3>
+        <pre><code id="rewrittenCode" class="hljs language-python"></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
